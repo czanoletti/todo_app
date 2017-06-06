@@ -2,7 +2,7 @@
 
 let express = require('express'),
     bp = require('body-parser'),
-    favicon = require('serve-favicon'),
+
     helmet = require('helmet'),
     cors = require('cors'),
     methodOverride = require('method-override'),
@@ -39,12 +39,10 @@ app
     .use(morgan('dev'))
     .use(methodOverride())
 
-
-    .use(favicon(path.join(__dirname, 'favicon', 'logo.ico')))
-
 //Routes
     .use('/', express.static(path.join(__dirname, 'public')))
     .use('/api', routes.todo);
+
 
 //Listening to port
 
