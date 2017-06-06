@@ -18,7 +18,9 @@ let express = require('express'),
     routes = require('./routes/index');
 
 let mongoose = require('mongoose'),
-    dburl = 'mongodb://localhost/todoApp';
+    dbuser = 'binaryhusky',
+    dbpassword = '<sisifo2016>',
+    dburl = `mongodb://${dbuser}:${dbpassword}@ds145118.mlab.com:45118/mytask_list`;
 
 mongoose.connect(dburl);
 
