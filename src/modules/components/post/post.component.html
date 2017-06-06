@@ -1,0 +1,27 @@
+<style>
+    input[type=checkbox]{
+        width:25px;
+        height:25px;
+    }
+</style>
+<div class="row">
+    <div class="col-xs-12">
+        <div *ngFor="let todo of todos" class="well">
+
+            <span *ngIf="todo.isChecked" class="glyphicon glyphicon-check text-success"> Todo is Done!</span>
+            <h1>{{todo.title}}</h1>
+            <p>{{todo.content}}</p>
+            <hr>
+
+            <div *ngIf="!todo.isChecked">
+                Done? <input (click)="checkTodo(todo._id, {isChecked: !todo.isChecked})" type="checkbox" >
+            </div>
+            <hr>
+            <cite><span class="glyphicon glyphicon-user"></span> {{todo.author}}</cite>
+            <span class="glyphicon glyphicon-calendar"> {{todo.date}} </span>
+            <hr>
+            <button (click)="deleteTodo($event, todo._id)" role="delete" class="btn btn-danger">Delete</button>
+
+        </div>
+    </div>
+</div>
