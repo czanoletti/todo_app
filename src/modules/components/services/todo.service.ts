@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 
 export class TodoService {
 
-    private url: string = 'http://localhost:3000';
+    private url: string = 'https://nameless-beach-38692.herokuapp.com';
 
     constructor(private http: Http){
 
